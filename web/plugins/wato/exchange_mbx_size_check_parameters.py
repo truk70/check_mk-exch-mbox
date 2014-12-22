@@ -2,7 +2,6 @@
 # -*- encoding: utf-8; py-indent-offset: 4 -*-
 # 2014 Marius Pana mp@sphs.ro
 
-
 register_check_parameters(
     subgroup_applications,
     "exchange_user_mbx_size",
@@ -17,4 +16,3 @@ register_check_parameters(
     None,
     None,
 )
-
