@@ -25,6 +25,23 @@ inventory:
 
 perfdata:
  One variable: {size}: the current size of the mailbox in MB.
+ 
+The agent uses a caching mechanism and runs once only every 24 hours.
+ 
+#-----------------
+#Quick HOWTO 
+#-----------------
+INSTALL PACKAGE
+On your OMD/Check_mk server run the following:
 
-Quick HOWTO 
-tbd ..
+ cmk -P install exchange_user_mbx_size-1.0.mkp 
+
+The agent will be in ~/local/share/check_mk/agents/plugins/SPH-Exchange-MailboxSize.ps1
+
+COPY AGENT TO DESTINATION
+Copy the agent part (SPH-Exchange-MailboxSize.ps1) to your MS Exchange server. This
+is usually in C:\Program Files\check_mk\plugins
+
+
+
+
