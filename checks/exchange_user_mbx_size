@@ -1,8 +1,6 @@
 #!/usr/bin/python
 # -*- encoding: utf-8; py-indent-offset: 4 -*-
-
 # Author: Marius Pana <mp@sphs.ro>
-
 # EXAMPLE DATA FROM:
 # fomat: emailaddress size_in_MB
 #<<<exchange_user_mbx_size>>>
