@@ -3,7 +3,7 @@
 #####################################################################################
 # Exchange 2010 : per user mailbox size
 # Author: Marius Pana
-# Company: Spearhead Systems 
+# Company: Spearhead Systems
 # Date 12/16/14
 #####################################################################################
 
@@ -16,7 +16,7 @@ add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010
 #	PrimarySmtpAddress = $mailbox.PrimarySmtpAddress
 #	TotalItemSize = $Stat.TotalItemSize.value.ToMB()
 #	}
-#}) | Select PrimarySmtpAddress,TotalItemSize | 
+#}) | Select PrimarySmtpAddress,TotalItemSize |
 #Export-CSV C:\CMK-MailboxReport.csv -NTI}
 
 # filename for timestamp
@@ -36,7 +36,7 @@ If (Test-Path $timestamp){
   $filedate = (ls $timestamp).LastWriteTime
   $now = Get-Date
   $earlier = $now.AddSeconds(-$delay)
-  # exit if timestamp to young
+  # exit if timestamp too young
   if ( $filedate -gt $earlier ) { exit }
 }
 # create new timestamp file
@@ -51,7 +51,7 @@ $Stat = $mailbox | Get-MailboxStatistics |  Select TotalItemSize
 	PrimarySmtpAddress = $mailbox.PrimarySmtpAddress
 	TotalItemSize = $Stat.TotalItemSize.value.ToMB()
 	}
-}) | Select PrimarySmtpAddress,TotalItemSize | 
+}) | Select PrimarySmtpAddress,TotalItemSize |
 Export-CSV C:\CMK-MailboxReport.csv -NoTypeInformation
 
 (Get-Content C:\CMK-MailboxReport.csv) | Foreach-Object {$_ -replace '"', ''} | Foreach-Object {$_ -replace ',', ' '} | select -Skip 1 | Set-Content C:\CMK-MailboxReport.csv
