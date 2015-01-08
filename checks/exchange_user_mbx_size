@@ -11,7 +11,7 @@ factory_settings["exchange_user_mbx_size_default_values"] = {
         "levels" : (1500, 2000),
 }
 
-exchange_user_mbx_size_default_values = (50, 100)
+exchange_user_mbx_size_default_values = (1500, 2000)
 
 def inventory_exchange_user_mbx_size(info):
     inventory = []
