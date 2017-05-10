@@ -20,9 +20,9 @@ add-PSSnapin Microsoft.Exchange.Management.PowerShell.E2010
 #Export-CSV C:\CMK-MailboxReport.csv -NTI}
 
 # filename for timestamp
-$remote_host = $env:REMOTE_HOST
+$remote_host_tmp = $env:REMOTE_HOST
 $agent_dir   = $env:MK_CONFDIR
-
+$remote_host = $remote_host_tmp  -replace ":","."
 $timestamp = $agent_dir + "\timestamp."+ $remote_host
 
 # execute agent only every $delay seconds - 24 hours
